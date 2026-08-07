@@ -23,7 +23,7 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Onest:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=20260807-11" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -49,6 +49,7 @@
   </head>
   <body>
     <a class="skip-link" href="#main">Перейти к содержанию</a>
+    <button class="motion-toggle" type="button" aria-label="Приостановить анимацию" aria-pressed="false" title="Приостановить анимацию" data-motion-toggle><span aria-hidden="true">Ⅱ</span></button>
 
     <header class="site-header" data-header>
       <div class="header-shell">
@@ -58,13 +59,17 @@
 
         <nav class="site-nav" aria-label="Основная навигация" data-nav>
           <a href="#about">О программе</a>
+          <a href="#park-day">День в парке</a>
           <a href="#foundations">Фондам</a>
           <a href="#companies">Компаниям</a>
           <a href="#rules">Правила</a>
           <a href="#partners">Партнёры</a>
         </nav>
 
-        <a class="button button-small header-cta" href="tel:+79779704964">Связаться с координатором</a>
+        <a class="button button-small header-cta" href="tel:+79779704964" aria-label="Позвонить координатору: +7 977 970-49-64">
+          <span class="header-phone-label">Координатор</span>
+          <strong class="header-phone-number">+7 977 970-49-64</strong>
+        </a>
         <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" data-menu-toggle>
           <span></span><span></span><span></span>
         </button>
@@ -215,12 +220,51 @@
             Ребёнок приезжает в Парк «Сказка», встречается с животными, выбирает развлечения и уезжает
             с самыми тёплыми воспоминаниями.
           </p>
-          <ul class="route-list" aria-label="Маршрут впечатлений">
+          <ul class="route-list" aria-label="Анимированный маршрут визита">
             <li><span>01</span> Прогулка по живому парку</li>
             <li><span>02</span> Знакомство с животными</li>
             <li><span>03</span> Аттракционы по возрасту</li>
             <li><span>04</span> Время вместе без спешки</li>
           </ul>
+        </div>
+      </section>
+
+      <section class="park-film" id="park-day" aria-labelledby="park-film-title">
+        <div class="park-film-shell">
+          <div class="park-film-copy reveal">
+            <p class="eyebrow"><span></span> День глазами ребёнка</p>
+            <h2 id="park-film-title">Посмотрите, как проходит время в парке</h2>
+            <p>
+              Короткое видео показывает главное: яркие аттракционы, семейные зоны и возможность
+              выбирать развлечения в своём темпе.
+            </p>
+            <ul class="park-film-moments" aria-label="Что ребёнок увидит в парке">
+              <li><span>01</span> Активные аттракционы</li>
+              <li><span>02</span> Спокойные семейные зоны</li>
+              <li><span>03</span> Впечатления для разного возраста</li>
+            </ul>
+          </div>
+
+          <figure class="park-film-media reveal" data-delay="1">
+            <div class="park-film-frame">
+              <video
+                controls
+                muted
+                playsinline
+                preload="metadata"
+                poster="assets/video/park-day-poster.jpg"
+                aria-describedby="park-film-caption"
+                data-park-video
+              >
+                <source src="assets/video/park-day.mp4" type="video/mp4" />
+                Ваш браузер не поддерживает видео. <a href="assets/video/park-day.mp4">Открыть ролик отдельно</a>.
+              </video>
+              <span class="park-film-duration" aria-hidden="true">12 секунд в «Сказке»</span>
+            </div>
+            <figcaption id="park-film-caption">
+              Видео запускается автоматически без звука. Звук можно включить в плеере.
+            </figcaption>
+          </figure>
         </div>
       </section>
 
@@ -544,6 +588,6 @@
       </div>
     </footer>
 
-    <script src="script.js?v=20260807-3"></script>
+    <script src="script.js?v=20260807-6"></script>
   </body>
 </html>

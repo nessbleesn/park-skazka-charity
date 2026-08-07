@@ -2,6 +2,21 @@ const header = document.querySelector("[data-header]");
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const navigation = document.querySelector("[data-nav]");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const motionToggle = document.querySelector("[data-motion-toggle]");
+
+const setAmbientMotionPaused = (paused) => {
+  document.documentElement.classList.toggle("ambient-motion-paused", paused);
+  motionToggle?.setAttribute("aria-pressed", String(paused));
+  const label = paused ? "Продолжить анимацию" : "Приостановить анимацию";
+  motionToggle?.setAttribute("aria-label", label);
+  motionToggle?.setAttribute("title", label);
+  const icon = motionToggle?.querySelector("span");
+  if (icon) icon.textContent = paused ? "▶" : "Ⅱ";
+};
+
+motionToggle?.addEventListener("click", () => {
+  setAmbientMotionPaused(!document.documentElement.classList.contains("ambient-motion-paused"));
+});
 
 const setMenuState = (open) => {
   menuToggle?.setAttribute("aria-expanded", String(open));
@@ -98,6 +113,38 @@ if (!prefersReducedMotion.matches && "IntersectionObserver" in window) {
   );
 
   counters.forEach((counter) => counterObserver.observe(counter));
+}
+
+const parkVideo = document.querySelector("[data-park-video]");
+
+if (parkVideo) {
+  if (prefersReducedMotion.matches) {
+    parkVideo.pause();
+    parkVideo.currentTime = 0;
+  } else {
+    const startParkVideo = () => {
+      parkVideo.play().catch(() => {
+        // Native controls remain available if a browser blocks autoplay.
+      });
+    };
+
+    if ("IntersectionObserver" in window) {
+      const videoObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            startParkVideo();
+            videoObserver.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.4 },
+      );
+
+      videoObserver.observe(parkVideo);
+    } else {
+      startParkVideo();
+    }
+  }
 }
 
 document.querySelector("[data-open-rules]")?.addEventListener("click", () => {
