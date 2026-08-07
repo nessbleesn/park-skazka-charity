@@ -147,6 +147,23 @@ if (parkVideo) {
   }
 }
 
+const handoffItems = [...document.querySelectorAll(".handoff-route li")];
+
+const toggleHandoffItem = (item) => {
+  const shouldActivate = !item.classList.contains("is-active");
+  handoffItems.forEach((routeItem) => routeItem.classList.remove("is-active"));
+  if (shouldActivate) item.classList.add("is-active");
+};
+
+handoffItems.forEach((item) => {
+  item.addEventListener("click", () => toggleHandoffItem(item));
+  item.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    event.preventDefault();
+    toggleHandoffItem(item);
+  });
+});
+
 document.querySelector("[data-open-rules]")?.addEventListener("click", () => {
   const firstRule = document.querySelector("#rule-details details");
   if (firstRule) firstRule.open = true;
