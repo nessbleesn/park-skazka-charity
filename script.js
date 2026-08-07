@@ -54,6 +54,52 @@ if (!prefersReducedMotion.matches && "IntersectionObserver" in window) {
   revealElements.forEach((element) => element.classList.add("is-visible"));
 }
 
+const counters = [...document.querySelectorAll("[data-count]")];
+const numberFormatter = new Intl.NumberFormat("ru-RU");
+
+const setCounterValue = (counter, value) => {
+  const digits = counter.querySelector(".impact-value-digits");
+  if (digits) digits.textContent = numberFormatter.format(value).replace(/\u00a0/g, " ");
+};
+
+const animateCounter = (counter) => {
+  const target = Number(counter.dataset.count);
+  const duration = 1400;
+  const startedAt = performance.now();
+
+  const update = (now) => {
+    const progress = Math.min((now - startedAt) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    setCounterValue(counter, Math.round(target * eased));
+
+    if (progress < 1) {
+      requestAnimationFrame(update);
+    } else {
+      setCounterValue(counter, target);
+      counter.classList.add("is-counted");
+    }
+  };
+
+  requestAnimationFrame(update);
+};
+
+if (!prefersReducedMotion.matches && "IntersectionObserver" in window) {
+  counters.forEach((counter) => setCounterValue(counter, 0));
+
+  const counterObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        animateCounter(entry.target);
+        counterObserver.unobserve(entry.target);
+      });
+    },
+    { rootMargin: "0px 0px -10%", threshold: 0.45 },
+  );
+
+  counters.forEach((counter) => counterObserver.observe(counter));
+}
+
 document.querySelector("[data-open-rules]")?.addEventListener("click", () => {
   const firstRule = document.querySelector("#rule-details details");
   if (firstRule) firstRule.open = true;

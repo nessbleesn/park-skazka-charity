@@ -73,6 +73,10 @@
 
     <main id="main">
       <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="bubble-field hero-bubbles reveal" aria-hidden="true">
+          <span class="ambient-bubble hero-bubble-one"></span>
+          <span class="ambient-bubble hero-bubble-two"></span>
+        </div>
         <div class="hero-copy reveal">
           <p class="eyebrow"><span></span> Социальная программа Парка «Сказка»</p>
           <h1 id="hero-title">Подари ребёнку <em>радость</em></h1>
@@ -173,11 +177,11 @@
 
         <div class="impact-grid">
           <article class="impact-number reveal">
-            <strong>20<span>+</span></strong>
+            <strong class="impact-value" data-count="20" aria-label="20 плюс"><span class="impact-value-digits" aria-hidden="true">20</span><span class="impact-value-suffix" aria-hidden="true">+</span></strong>
             <p>фондов и социальных партнёров</p>
           </article>
           <article class="impact-number reveal" data-delay="1">
-            <strong>35 000</strong>
+            <strong class="impact-value" data-count="35000" aria-label="35 000"><span class="impact-value-digits" aria-hidden="true">35 000</span></strong>
             <p>билетов в год можем направлять на социальные визиты</p>
           </article>
           <div class="impact-note reveal" data-delay="2">
@@ -221,6 +225,10 @@
       </section>
 
       <section class="section preparation" aria-labelledby="preparation-title">
+        <div class="bubble-field preparation-bubbles reveal" aria-hidden="true">
+          <span class="ambient-bubble preparation-bubble-one"></span>
+          <span class="ambient-bubble preparation-bubble-two"></span>
+        </div>
         <div class="section-heading section-heading-wide reveal">
           <p class="eyebrow"><span></span> Как устроена программа</p>
           <h2 id="preparation-title">Визит готовится заранее</h2>
@@ -440,11 +448,11 @@
       </section>
 
       <section class="partners section" id="partners" aria-labelledby="partners-title">
-        <div class="partner-ambient reveal" aria-hidden="true">
-          <span class="partner-bubble partner-bubble-one"></span>
-          <span class="partner-bubble partner-bubble-two"></span>
-          <span class="partner-bubble partner-bubble-three"></span>
-          <span class="partner-bubble partner-bubble-four"></span>
+        <div class="bubble-field partner-ambient reveal" aria-hidden="true">
+          <span class="ambient-bubble partner-bubble-one"></span>
+          <span class="ambient-bubble partner-bubble-two"></span>
+          <span class="ambient-bubble partner-bubble-three"></span>
+          <span class="ambient-bubble partner-bubble-four"></span>
         </div>
         <div class="section-heading section-heading-wide reveal">
           <p class="eyebrow"><span></span> Наши партнёры</p>
@@ -502,9 +510,12 @@
           <img src="assets/hero.jpg" width="1446" height="1080" alt="Панорама Парка Сказка в солнечный день" loading="lazy" />
         </picture>
         <div class="join-overlay" aria-hidden="true"></div>
+        <div class="bubble-field join-bubbles reveal" aria-hidden="true">
+          <span class="ambient-bubble join-bubble-one"></span>
+        </div>
         <div class="join-content reveal">
           <p class="eyebrow eyebrow-light"><span></span> Присоединиться</p>
-          <h2 id="join-title">Пусть хороший день случится</h2>
+          <h2 id="join-title">Пусть <span class="join-accent">хороший</span> <span class="join-accent">день</span> случится</h2>
           <p>
             Мы открыты для фондов и компаний, которые хотят подарить детям день радости в Парке «Сказка».
           </p>
@@ -533,6 +544,6 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=20260807-3"></script>
   </body>
 </html>
