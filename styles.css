@@ -2549,6 +2549,15 @@ textarea {
   max-height: 78px;
 }
 
+.partner-card-logo img.partner-logo-portrait {
+  width: 132px;
+  height: 112px;
+  max-width: 132px;
+  max-height: none;
+  object-fit: cover;
+  object-position: 50% 52%;
+}
+
 .partner-card-label {
   font-family: var(--display);
   font-size: clamp(13px, 1.15vw, 16px);
@@ -3322,6 +3331,13 @@ textarea {
   .partner-card-logo img.partner-logo-square {
     max-width: 66px;
     max-height: 66px;
+  }
+
+  .partner-card-logo img.partner-logo-portrait {
+    width: 112px;
+    height: 96px;
+    max-width: 112px;
+    max-height: none;
   }
 
   .partner-card-label {
