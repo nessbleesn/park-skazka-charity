@@ -4411,3 +4411,465 @@ textarea {
     font-size: 32px;
   }
 }
+
+/* Mobile composition: compact, readable, and independent from the approved desktop layout. */
+@media (max-width: 680px) {
+  :root {
+    --header-height: 64px;
+    --page: calc(100% - 32px);
+  }
+
+  html {
+    scroll-padding-top: 72px;
+  }
+
+  section[id],
+  article[id],
+  aside[id] {
+    scroll-margin-top: 72px;
+  }
+
+  .header-shell {
+    min-height: var(--header-height);
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .park-logo img {
+    width: 104px;
+  }
+
+  .header-cta {
+    min-height: 42px;
+    padding: 0 10px;
+    border-radius: 14px;
+  }
+
+  .header-phone-number {
+    font-size: 9.5px;
+    letter-spacing: -0.02em;
+  }
+
+  .menu-toggle {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+  }
+
+  .site-nav {
+    top: var(--header-height);
+    max-height: calc(100dvh - var(--header-height));
+    padding: 18px 16px 24px;
+    background: linear-gradient(180deg, rgba(251, 249, 255, 0.99), rgba(239, 233, 252, 0.98));
+    box-shadow: 0 24px 50px rgba(32, 28, 78, 0.16);
+  }
+
+  .site-nav a {
+    padding: 14px 2px;
+    font-size: 16px;
+  }
+
+  .motion-toggle {
+    right: 12px;
+    bottom: 12px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .eyebrow,
+  .panel-label,
+  .hero-copy > .eyebrow {
+    margin-bottom: 18px;
+    gap: 9px;
+    font-size: 12.5px;
+    letter-spacing: 0.055em;
+    line-height: 1.42;
+  }
+
+  .eyebrow span,
+  .hero-copy > .eyebrow span {
+    width: 28px;
+    height: 2px;
+  }
+
+  .hero {
+    padding: calc(var(--header-height) + 30px) 16px 24px;
+    gap: 30px;
+    border-radius: 0 0 32px 32px;
+  }
+
+  .hero h1 {
+    font-size: clamp(34px, 9.5vw, 39px);
+    line-height: 1.04;
+  }
+
+  .hero-text {
+    margin-top: 20px;
+    font-size: 15px;
+    line-height: 1.62;
+  }
+
+  .hero-text p + p {
+    margin-top: 12px;
+  }
+
+  .hero-actions {
+    margin-top: 26px;
+    gap: 10px;
+  }
+
+  .button {
+    min-height: 52px;
+    padding: 12px 17px;
+    font-size: 14px;
+    line-height: 1.25;
+  }
+
+  .header-cta {
+    min-height: 44px;
+    height: 44px;
+    padding: 0 10px;
+  }
+
+  .hero-visual {
+    min-height: clamp(292px, 78vw, 340px);
+    border-radius: 26px 12px 48px 12px;
+  }
+
+  .hero-caption {
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    padding: 12px 13px;
+    border-radius: 16px 16px 32px 16px;
+    font-size: 11.5px;
+    line-height: 1.35;
+  }
+
+  .hero-bubble-one {
+    width: 104px;
+  }
+
+  .hero-bubble-two {
+    left: -2%;
+    width: 74px;
+  }
+
+  .hero-bubble-three {
+    width: 62px;
+  }
+
+  .section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .section-heading h2,
+  .experience-copy h2,
+  .rules-intro h2 {
+    font-size: clamp(30px, 8.2vw, 34px);
+    line-height: 1.08;
+    overflow-wrap: normal;
+    hyphens: none;
+  }
+
+  .section-heading > p:last-child,
+  .experience-copy .lead {
+    margin-top: 18px;
+    font-size: 15.5px;
+    line-height: 1.62;
+  }
+
+  .program-summary {
+    padding: 56px 16px;
+    gap: 12px;
+  }
+
+  .summary-card {
+    padding: 26px 20px;
+    border-radius: 24px;
+  }
+
+  .summary-card h2,
+  .rules-download-copy h2 {
+    font-size: clamp(28px, 7.6vw, 31px);
+    line-height: 1.08;
+  }
+
+  .summary-time {
+    margin-top: 20px;
+    font-size: 22px;
+  }
+
+  .summary-time strong {
+    margin-top: 10px;
+    padding: 10px 13px 11px;
+    border-radius: 14px;
+    font-size: clamp(27px, 7.6vw, 31px);
+  }
+
+  .summary-copy {
+    margin-top: 26px;
+    padding-top: 20px;
+  }
+
+  .summary-copy p,
+  .summary-social-intro > p:last-child,
+  .summary-social-copy p,
+  .summary-social-scale p {
+    font-size: 14px;
+    line-height: 1.58;
+  }
+
+  .summary-copy p + p {
+    margin-top: 14px;
+  }
+
+  .summary-subtitle {
+    margin-top: 14px;
+    font-size: 16px;
+  }
+
+  .summary-numbers {
+    margin-top: 24px;
+    padding-top: 20px;
+  }
+
+  .summary-numbers > div + div {
+    padding-top: 18px;
+  }
+
+  .summary-numbers .impact-value {
+    font-size: 48px;
+  }
+
+  .summary-numbers p {
+    margin-top: 8px;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .summary-social-note {
+    padding: 26px 20px;
+    gap: 20px;
+    border-radius: 24px;
+  }
+
+  .summary-social-intro h2 {
+    font-size: clamp(18.5px, 5.9vw, 24px);
+    line-height: 1.1;
+    hyphens: none;
+  }
+
+  .summary-social-intro > p:last-child,
+  .summary-social-copy p,
+  .summary-social-scale p {
+    margin-top: 14px;
+  }
+
+  .summary-social-scale {
+    padding: 20px 0;
+  }
+
+  .summary-social-scale .impact-value {
+    font-size: 48px;
+  }
+
+  .summary-social-copy p + p {
+    padding-top: 14px;
+  }
+
+  .experience {
+    gap: 32px;
+  }
+
+  .experience-caption {
+    margin-top: 22px;
+    padding-top: 16px;
+    font-size: 11.5px;
+    line-height: 1.5;
+  }
+
+  .experience .park-film-frame {
+    padding: 3px;
+    border-radius: 18px 18px 44px 18px;
+  }
+
+  .experience .park-film-frame video {
+    border-radius: 14px 14px 40px 14px;
+  }
+
+  .audience-foundations .audience-photo,
+  .audience-companies .audience-photo {
+    min-height: clamp(220px, 60vw, 270px);
+  }
+
+  .audience-foundations .audience-copy,
+  .audience-companies .audience-copy {
+    padding: 48px 16px 52px;
+  }
+
+  .audience-copy h2 {
+    font-size: clamp(28px, 7.7vw, 32px);
+    line-height: 1.09;
+    overflow-wrap: normal;
+    hyphens: none;
+  }
+
+  .audience-copy > p:not(.panel-label) {
+    margin-top: 20px;
+    font-size: 14.5px;
+    line-height: 1.62;
+  }
+
+  .audience-copy > p:not(.panel-label) + p {
+    margin-top: 16px;
+  }
+
+  .audience-copy > .button {
+    width: 100%;
+    margin-top: 26px;
+  }
+
+  .handoff {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .handoff-route {
+    margin-top: 32px;
+  }
+
+  .handoff-route::before {
+    left: 17px;
+  }
+
+  .handoff-route li {
+    min-height: 84px;
+    padding: 3px 0 20px 54px;
+  }
+
+  .handoff-route li::before {
+    width: 36px;
+    height: 36px;
+  }
+
+  .handoff-route span {
+    font-size: 10px;
+  }
+
+  .handoff-route strong {
+    margin-top: 6px;
+    font-size: 17px;
+    line-height: 1.25;
+  }
+
+  .partners {
+    padding-top: 64px;
+    padding-bottom: 72px;
+  }
+
+  .partners .section-heading h2 {
+    font-size: clamp(29px, 8vw, 33px);
+  }
+
+  .partner-grid {
+    margin-top: 30px;
+    border-radius: 22px;
+  }
+
+  .partner-card {
+    min-height: 112px;
+    padding: 13px 9px;
+    gap: 7px;
+  }
+
+  .partner-card-logo img {
+    max-width: min(112px, 94%);
+    max-height: 44px;
+  }
+
+  .partner-card-logo img.partner-logo-square {
+    max-width: 52px;
+    max-height: 52px;
+  }
+
+  .partner-card-logo img.partner-logo-portrait {
+    width: 86px;
+    height: 70px;
+    max-width: 86px;
+  }
+
+  .partner-card-label {
+    font-size: 11px;
+    line-height: 1.3;
+  }
+
+  .partner-card:last-child {
+    grid-column: 1 / -1;
+    min-height: 96px;
+  }
+
+  .partners-rules {
+    margin-top: 22px;
+    padding: 22px 18px;
+    gap: 18px;
+    border-radius: 22px;
+  }
+
+  .partners-rules h2 {
+    font-size: 24px;
+  }
+
+  .join {
+    padding: 64px 16px;
+  }
+
+  .join-content h2 {
+    font-size: clamp(26px, 8.2vw, 35px);
+    line-height: 1.08;
+  }
+
+  .join-subtitle {
+    margin-top: 24px !important;
+    font-size: clamp(22px, 6.5vw, 26px) !important;
+    line-height: 1.2;
+  }
+
+  .join-content > p:not(.eyebrow):not(.join-subtitle):not(.join-thanks) {
+    margin-top: 24px;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .join-actions {
+    margin-top: 26px;
+    gap: 10px;
+  }
+
+  .join-content > .join-thanks {
+    margin-top: 24px;
+    font-size: 14.5px;
+    line-height: 1.5;
+  }
+
+  .join-bubble-one {
+    right: -34%;
+    width: 250px;
+  }
+
+  .site-footer {
+    padding: 38px 0;
+    gap: 26px;
+  }
+
+  .footer-links {
+    gap: 10px;
+  }
+
+  .footer-meta {
+    display: grid;
+    justify-content: start;
+    gap: 12px;
+  }
+}
