@@ -2556,6 +2556,7 @@ textarea {
   max-height: none;
   object-fit: cover;
   object-position: 50% 52%;
+  mix-blend-mode: multiply;
 }
 
 .partner-card-label {
