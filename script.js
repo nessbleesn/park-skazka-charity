@@ -49,6 +49,31 @@ const updateHeader = () => {
 updateHeader();
 window.addEventListener("scroll", updateHeader, { passive: true });
 
+const headerToneSections = [...document.querySelectorAll("[data-header-tone]")];
+let headerToneFrame = 0;
+
+const updateHeaderTone = () => {
+  if (!header) return;
+  const probeLine = header.offsetHeight + 2;
+  const activeSection = headerToneSections.find((section) => {
+    const bounds = section.getBoundingClientRect();
+    return bounds.top <= probeLine && bounds.bottom > probeLine;
+  });
+  header.dataset.surface = activeSection?.dataset.headerTone || "white";
+};
+
+const requestHeaderToneUpdate = () => {
+  if (headerToneFrame) return;
+  headerToneFrame = window.requestAnimationFrame(() => {
+    headerToneFrame = 0;
+    updateHeaderTone();
+  });
+};
+
+updateHeaderTone();
+window.addEventListener("scroll", requestHeaderToneUpdate, { passive: true });
+window.addEventListener("resize", requestHeaderToneUpdate);
+
 const revealElements = [...document.querySelectorAll(".reveal")];
 
 if (!prefersReducedMotion.matches && "IntersectionObserver" in window) {
@@ -161,20 +186,6 @@ handoffItems.forEach((item) => {
     if (event.key !== "Enter" && event.key !== " ") return;
     event.preventDefault();
     toggleHandoffItem(item);
-  });
-});
-
-document.querySelector("[data-open-rules]")?.addEventListener("click", () => {
-  const firstRule = document.querySelector("#rule-details details");
-  if (firstRule) firstRule.open = true;
-});
-
-document.querySelectorAll(".rules-list details").forEach((item) => {
-  item.addEventListener("toggle", () => {
-    if (!item.open || window.innerWidth <= 680) return;
-    document.querySelectorAll(".rules-list details[open]").forEach((openItem) => {
-      if (openItem !== item) openItem.open = false;
-    });
   });
 });
 

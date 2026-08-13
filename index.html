@@ -4,16 +4,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#6657c5" />
-    <title>Подари ребёнку радость — социальная программа Парка «Сказка»</title>
+    <title>Подари ребенку радость — социальная программа Парка «Сказка»</title>
     <meta
       name="description"
-      content="Организованные социальные визиты в Парк «Сказка» для подопечных благотворительных фондов и социальных организаций."
+      content="Социальная программа Парка «Сказка» для благотворительных фондов, социальных организаций и компаний."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Подари ребёнку радость — Парк «Сказка»" />
+    <meta property="og:title" content="Подари ребенку радость — Парк «Сказка»" />
     <meta
       property="og:description"
-      content="Не просто билет, а день в парке, который ребёнок запомнит. Социальная программа для фондов и компаний."
+      content="Парк передает билеты подопечным фондов и помогает детям провести день среди аттракционов, животных и новых впечатлений."
     />
     <meta property="og:image" content="assets/og-charity.jpg" />
     <link rel="icon" href="assets/skazka-logo.png" />
@@ -23,13 +23,13 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Onest:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260807-14" />
+    <link rel="stylesheet" href="styles.css?v=20260813-24" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "name": "Подари ребёнку радость",
-        "description": "Социальная программа организованных визитов в Парк Сказка",
+        "name": "Подари ребенку радость",
+        "description": "Социальная программа Парка Сказка",
         "inLanguage": "ru-RU",
         "about": {
           "@type": "Organization",
@@ -51,7 +51,7 @@
     <a class="skip-link" href="#main">Перейти к содержанию</a>
     <button class="motion-toggle" type="button" aria-label="Приостановить анимацию" aria-pressed="false" title="Приостановить анимацию" data-motion-toggle><span aria-hidden="true">Ⅱ</span></button>
 
-    <header class="site-header" data-header>
+    <header class="site-header" data-header data-surface="hero">
       <div class="header-shell">
         <a class="park-logo" href="https://parkskazka.com/" target="_blank" rel="noreferrer" aria-label="Парк Сказка — официальный сайт">
           <img src="assets/skazka-logo.png" width="150" height="56" alt="Парк Сказка" />
@@ -59,15 +59,14 @@
 
         <nav class="site-nav" aria-label="Основная навигация" data-nav>
           <a href="#about">О программе</a>
-          <a href="#park-day">День в парке</a>
           <a href="#foundations">Фондам</a>
           <a href="#companies">Компаниям</a>
-          <a href="#rules">Правила</a>
-          <a href="#partners">Партнёры</a>
+          <a href="assets/docs/pravila-uchastiya.pdf?v=20260813-1" target="_blank" rel="noreferrer">Правила участия</a>
+          <a href="#partners">Партнеры</a>
         </nav>
 
-        <a class="button button-small header-cta" href="tel:+79779704964" aria-label="Позвонить координатору: +7 977 970-49-64">
-          <span class="header-phone-label">Координатор</span>
+        <a class="button button-small header-cta" href="tel:+79779704964" aria-label="Связаться с координатором: +7 977 970-49-64">
+          <span class="header-phone-label">Связаться с координатором</span>
           <strong class="header-phone-number">+7 977 970-49-64</strong>
         </a>
         <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" data-menu-toggle>
@@ -77,421 +76,164 @@
     </header>
 
     <main id="main">
-      <section class="hero" id="top" aria-labelledby="hero-title">
+      <section class="hero" id="top" aria-labelledby="hero-title" data-header-tone="hero">
         <div class="bubble-field hero-bubbles reveal" aria-hidden="true">
           <span class="ambient-bubble hero-bubble-one"></span>
           <span class="ambient-bubble hero-bubble-two"></span>
+          <span class="ambient-bubble hero-bubble-three"></span>
         </div>
         <div class="hero-copy reveal">
           <p class="eyebrow"><span></span> Социальная программа Парка «Сказка»</p>
-          <h1 id="hero-title">Подари ребёнку <em>радость</em></h1>
-          <p class="hero-thesis">Не просто билет. А день в парке, который ребёнок запомнит.</p>
-          <p class="hero-text">
-            Мы передаём билеты подопечным фондов и помогаем организовать спокойный день среди
-            аттракционов, животных и новых впечатлений.
-          </p>
-          <div class="hero-story" role="group" aria-label="Как работает социальный визит">
-            <div class="story-heading">
-              <span>Как работает программа</span>
-              <strong>Один понятный маршрут</strong>
-            </div>
-            <div class="story-diagram">
-              <div class="story-line" aria-hidden="true">
-                <span class="story-ticket">Билет</span>
-              </div>
-              <ol class="story-stops">
-                <li>
-                  <span class="story-figure story-figure-fund" aria-hidden="true">
-                    <svg viewBox="0 0 48 48" fill="none">
-                      <circle cx="18" cy="17" r="5" />
-                      <circle cx="31" cy="19" r="4" />
-                      <path d="M8 36c1-7 5-11 10-11s9 4 10 11M26 36c.8-5 3-8 7-8 3.7 0 6.2 2.7 7 8" />
-                    </svg>
-                  </span>
-                  <span class="story-label"><small>Кому</small><strong>Фонд / НКО</strong></span>
-                </li>
-                <li>
-                  <span class="story-figure story-figure-park" aria-hidden="true">
-                    <svg viewBox="0 0 48 48" fill="none">
-                      <circle cx="24" cy="21" r="13" />
-                      <circle cx="24" cy="21" r="2" />
-                      <path d="M24 8v26M11 21h26M15 12l18 18M33 12 15 30M17 41l7-7 7 7" />
-                    </svg>
-                  </span>
-                  <span class="story-label"><small>Что делает парк</small><strong>Готовит визит</strong></span>
-                </li>
-                <li>
-                  <span class="story-figure story-figure-child" aria-hidden="true">
-                    <svg viewBox="0 0 48 48" fill="none">
-                      <circle cx="24" cy="14" r="6" />
-                      <path d="M14 37c1.2-9 4.8-14 10-14s8.8 5 10 14M18 29l-7 5M30 29l7 5" />
-                      <path d="m38 10 1.2 2.5 2.8.4-2 2 .5 2.8-2.5-1.3-2.5 1.3.5-2.8-2-2 2.8-.4L38 10Z" />
-                    </svg>
-                  </span>
-                  <span class="story-label"><small>Результат</small><strong>День для ребёнка</strong></span>
-                </li>
-              </ol>
-            </div>
+          <h1 id="hero-title">Подари ребенку <em>радость</em></h1>
+          <div class="hero-text">
+            <p>Парк «Сказка» ежегодно участвует в поддержке благотворительных фондов и социальных организаций.</p>
+            <p>Мы передаем билеты подопечным фондов и помогаем детям провести день среди аттракционов, животных и новых впечатлений.</p>
           </div>
           <div class="hero-actions">
             <a class="button button-primary" href="tel:+79779704964">Получить билеты</a>
-            <a class="button button-secondary" href="mailto:info@parkskazka.com?subject=Поддержать%20социальный%20визит%20детей">Поддержать визит детей</a>
+            <a class="button button-secondary" href="mailto:info@parkskazka.com?subject=Поддержать%20визит%20детей">Поддержать визит детей</a>
           </div>
-          <p class="hero-contact">Заявки от фондов: <a href="tel:+79779704964">+7 977 970-49-64</a></p>
         </div>
 
         <div class="hero-visual reveal" data-delay="1">
           <picture>
-            <source srcset="assets/hero.webp" type="image/webp" />
-            <img src="assets/hero.jpg" width="1446" height="1080" alt="Вид на аттракционы и колесо обозрения Парка Сказка" fetchpriority="high" />
+            <source srcset="assets/hero-social.webp" type="image/webp" />
+            <img src="assets/hero-social.jpg" width="2400" height="1600" alt="Ребенок знакомится с хаски в Парке Сказка" fetchpriority="high" />
           </picture>
           <div class="hero-caption">
             <span class="caption-dot"></span>
-            Один день, который останется с ребёнком надолго
+            Один день, который останется с ребенком надолго.
           </div>
-          <svg class="hero-route" viewBox="0 0 520 170" fill="none" aria-hidden="true">
-            <path d="M8 138C92 14 177 190 270 68C347 -34 410 119 512 28" />
-            <circle cx="79" cy="82" r="7" />
-            <circle cx="268" cy="70" r="7" />
-            <circle cx="441" cy="68" r="7" />
-          </svg>
         </div>
       </section>
 
-      <section class="visit-slot" aria-labelledby="visit-slot-title">
-        <div class="slot-marker" aria-hidden="true">
-          <span>Вт</span>
-        </div>
-        <div class="slot-time">
-          <p class="micro-label">День социальной активности</p>
-          <h2 id="visit-slot-title">Вторник <strong>10:00—14:00</strong></h2>
-        </div>
-        <p class="slot-copy">
-          Основной слот для визитов фондов и социальных организаций. Дату, количество билетов и маршрут
-          группа заранее согласует с координатором программы.
-        </p>
-        <p class="slot-note">Индивидуальная дата возможна по согласованию</p>
-      </section>
-
-      <section class="section intro" id="about" aria-labelledby="about-title">
-        <div class="section-heading reveal">
+      <section class="program-summary section" id="about" aria-labelledby="about-title" data-header-tone="lavender">
+        <article class="summary-card summary-day reveal">
           <p class="eyebrow"><span></span> О программе</p>
-          <h2 id="about-title">Помощь уже имеет масштаб</h2>
-          <p>И мы готовы сделать её системной.</p>
-        </div>
-
-        <div class="impact-grid">
-          <article class="impact-number reveal">
-            <strong class="impact-value" data-count="20" aria-label="20 плюс"><span class="impact-value-digits" aria-hidden="true">20</span><span class="impact-value-suffix" aria-hidden="true">+</span></strong>
-            <p>фондов и социальных партнёров</p>
-          </article>
-          <article class="impact-number reveal" data-delay="1">
-            <strong class="impact-value" data-count="35000" aria-label="35 000"><span class="impact-value-digits" aria-hidden="true">35 000</span></strong>
-            <p>билетов в год можем направлять на социальные визиты</p>
-          </article>
-          <div class="impact-note reveal" data-delay="2">
-            <span>Важно</span>
-            <p>Финальные показатели социальной квоты подтверждаются перед публикацией страницы.</p>
+          <h2 id="about-title">День социальной активности</h2>
+          <p class="summary-time">Вторник, <strong>10:00–14:00</strong></p>
+          <div class="summary-copy">
+            <p>Это основной слот для визитов фондов и социальных организаций.</p>
+            <p>Дата, количество билетов и маршрут согласуются заранее с координатором программы.</p>
+            <p>В отдельных случаях дата и время визита могут быть согласованы индивидуально. Но основным слотом программы считается вторник с 10:00 до 14:00.</p>
           </div>
-        </div>
-      </section>
+        </article>
 
-      <section class="experience section" aria-labelledby="experience-title">
-        <div class="experience-gallery reveal">
-          <figure class="experience-main">
-            <picture>
-              <source srcset="assets/ferris.webp" type="image/webp" />
-              <img src="assets/ferris.jpg" width="1440" height="960" alt="Колесо обозрения и семейный аттракцион в Парке Сказка" loading="lazy" />
-            </picture>
-          </figure>
-          <figure class="experience-detail">
-            <picture>
-              <source srcset="assets/alpaca.webp" type="image/webp" />
-              <img src="assets/alpaca.jpg" width="1200" height="800" alt="Белая альпака в тематической зоне Парка Сказка" loading="lazy" />
-            </picture>
-          </figure>
-          <div class="gallery-label">Аттракционы · животные · прогулка</div>
-        </div>
-
-        <div class="experience-copy reveal" data-delay="1">
-          <p class="eyebrow"><span></span> Что получает ребёнок</p>
-          <h2 id="experience-title">День, в котором можно выбирать</h2>
-          <p class="lead">
-            Ребёнок приезжает в Парк «Сказка», встречается с животными, выбирает развлечения и уезжает
-            с самыми тёплыми воспоминаниями.
-          </p>
-          <ul class="route-list" aria-label="Анимированный маршрут визита">
-            <li><span>01</span> Прогулка по живому парку</li>
-            <li><span>02</span> Знакомство с животными</li>
-            <li><span>03</span> Аттракционы по возрасту</li>
-            <li><span>04</span> Время вместе без спешки</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="park-film" id="park-day" aria-labelledby="park-film-title">
-        <div class="park-film-shell">
-          <div class="park-film-copy reveal">
-            <p class="eyebrow"><span></span> День глазами ребёнка</p>
-            <h2 id="park-film-title">Посмотрите, как проходит время в парке</h2>
-            <p>
-              Короткое видео показывает главное: яркие аттракционы, семейные зоны и возможность
-              выбирать развлечения в своём темпе.
-            </p>
-            <ul class="park-film-moments" aria-label="Что ребёнок увидит в парке">
-              <li><span>01</span> Активные аттракционы</li>
-              <li><span>02</span> Спокойные семейные зоны</li>
-              <li><span>03</span> Впечатления для разного возраста</li>
-            </ul>
-          </div>
-
-          <figure class="park-film-media reveal" data-delay="1">
-            <div class="park-film-frame">
-              <video
-                controls
-                muted
-                playsinline
-                preload="metadata"
-                poster="assets/video/park-day-poster.jpg"
-                aria-describedby="park-film-caption"
-                data-park-video
-              >
-                <source src="assets/video/park-day.mp4" type="video/mp4" />
-                Ваш браузер не поддерживает видео. <a href="assets/video/park-day.mp4">Открыть ролик отдельно</a>.
-              </video>
-              <span class="park-film-duration" aria-hidden="true">12 секунд в «Сказке»</span>
+        <article class="summary-card summary-impact reveal" data-delay="1">
+          <p class="eyebrow"><span></span> Программа в цифрах</p>
+          <h2>Помощь уже имеет масштаб</h2>
+          <p class="summary-subtitle">И мы готовы сделать ее системной.</p>
+          <div class="summary-numbers">
+            <div>
+              <strong class="impact-value" data-count="20" aria-label="20 плюс"><span class="impact-value-digits" aria-hidden="true">20</span><span class="impact-value-suffix" aria-hidden="true">+</span></strong>
+              <p>фондов и социальных партнеров</p>
             </div>
-            <figcaption id="park-film-caption">
-              Видео запускается автоматически без звука. Звук можно включить в плеере.
-            </figcaption>
-          </figure>
-        </div>
+            <div>
+              <strong class="impact-value" data-count="35000" aria-label="35 000"><span class="impact-value-digits" aria-hidden="true">35 000</span></strong>
+              <p>билетов в год можем направлять на социальные визиты</p>
+            </div>
+          </div>
+        </article>
+
+        <aside class="summary-social-note reveal" data-delay="2" aria-labelledby="social-legacy-title">
+          <div class="summary-social-intro">
+          <p class="eyebrow"><span></span> Социальная ответственность</p>
+          <h2 id="social-legacy-title">Благотворитель&shy;ность — часть истории Парка «Сказка»</h2>
+          <p>
+            Парк «Сказка» всю свою историю занимается благотворительностью и является компанией с
+            <strong>ВЫСОКОЙ СОЦИАЛЬНОЙ ОТВЕТСТВЕННОСТЬЮ.</strong>
+          </p>
+          </div>
+          <div class="summary-social-scale">
+            <strong class="impact-value" data-count="200000" aria-label="Более 200 тысяч">
+              <span class="impact-value-digits" aria-hidden="true">200 000</span><span class="impact-value-suffix" aria-hidden="true">+</span>
+            </strong>
+            <p>За последнее время по благотворительным программам Парк «Сказка» посетило более 200 тысяч детей и их родителей.</p>
+          </div>
+          <div class="summary-social-copy">
+            <p>На своей территории Парк «Сказка» реализует огромное количество благотворительных программ и помогает семьям с различными социальными возможностями получить яркие положительные эмоции.</p>
+            <p>Благотворительные программы Парка «Сказка» реализуются в рамках собственных инициатив.</p>
+          </div>
+        </aside>
       </section>
 
-      <section class="section preparation" aria-labelledby="preparation-title">
-        <div class="bubble-field preparation-bubbles reveal" aria-hidden="true">
-          <span class="ambient-bubble preparation-bubble-one"></span>
-          <span class="ambient-bubble preparation-bubble-two"></span>
-        </div>
-        <div class="section-heading section-heading-wide reveal">
-          <p class="eyebrow"><span></span> Как устроена программа</p>
-          <h2 id="preparation-title">Визит готовится заранее</h2>
-          <p>
-            Согласуем группу, дату, маршрут и условия посещения, чтобы день прошёл спокойно для детей,
-            сопровождающих и команды парка.
-          </p>
+      <section class="experience section" aria-labelledby="experience-title" data-header-tone="white">
+        <div class="experience-copy reveal">
+          <p class="eyebrow"><span></span> Зачем нужна программа</p>
+          <h2 id="experience-title">Что получает ребенок</h2>
+          <p class="lead">Самый лучший день в парке «Сказка». Ребенок приезжает в парк, встречается с животными, выбирает развлечения и уезжает с самыми позитивными воспоминаниями.</p>
+          <p class="experience-caption">Аттракционы, животные и впечатления в одном маршруте.</p>
         </div>
 
-        <ol class="preparation-steps">
-          <li class="reveal">
-            <span class="step-number">01</span>
-            <h3>Продуманный визит</h3>
-            <p>Учитываем возраст, особенности группы и подходящий маршрут.</p>
-          </li>
-          <li class="reveal" data-delay="1">
-            <span class="step-number">02</span>
-            <h3>Безопасность и комфорт</h3>
-            <p>Команда заранее понимает состав группы и условия посещения.</p>
-          </li>
-          <li class="reveal" data-delay="2">
-            <span class="step-number">03</span>
-            <h3>Обратная связь</h3>
-            <p>Короткий отчёт после визита помогает программе развиваться.</p>
-          </li>
-          <li class="reveal" data-delay="3">
-            <span class="step-number">04</span>
-            <h3>Долгие отношения</h3>
-            <p>Партнёрство позволяет помогать большему числу детей системно.</p>
-          </li>
-        </ol>
+        <figure class="park-film-media reveal" data-delay="1">
+          <div class="park-film-frame">
+            <video
+              controls
+              autoplay
+              loop
+              muted
+              playsinline
+              preload="metadata"
+              poster="assets/video/park-day-poster.jpg"
+              aria-label="День в Парке Сказка"
+              data-park-video
+            >
+              <source src="assets/video/park-day.mp4" type="video/mp4" />
+              Ваш браузер не поддерживает видео. <a href="assets/video/park-day.mp4">Открыть ролик отдельно</a>.
+            </video>
+          </div>
+        </figure>
       </section>
 
       <section class="participation" aria-label="Сценарии участия">
-        <article class="audience-panel audience-foundations" id="foundations">
+        <article class="audience-panel audience-foundations" id="foundations" data-header-tone="lavender">
           <div class="audience-copy reveal">
             <p class="panel-label">Для фондов и НКО</p>
             <h2>Организуйте день в парке для подопечных</h2>
-            <p>
-              Расскажите о группе. Мы согласуем дату, количество билетов, маршрут и условия визита.
-              Билеты передаются бесплатно в рамках социальной квоты.
-            </p>
-            <p class="panel-rule">
-              Билеты нельзя продавать, обменивать, передавать третьим лицам или использовать вне программы.
-            </p>
+            <p>Расскажите нам о группе. Мы заранее согласуем дату, количество билетов, маршрут и условия посещения с учетом возраста и особенностей подопечных.</p>
+            <p>Билеты передаются бесплатно в рамках социальной квоты. Их нельзя продавать, обменивать, передавать третьим лицам или использовать вне программы.</p>
             <a class="button button-light" href="tel:+79779704964">Получить билеты</a>
           </div>
           <figure class="audience-photo reveal" data-delay="1">
             <picture>
-              <source srcset="assets/route.webp" type="image/webp" />
-              <img src="assets/route.jpg" width="1200" height="800" alt="Спокойный прогулочный маршрут в зоне с альпака" loading="lazy" />
+              <source srcset="assets/foundations-child.webp" type="image/webp" />
+              <img src="assets/foundations-child.jpg" width="2400" height="1600" alt="Ребенок знакомится с альпака в Парке Сказка" loading="lazy" />
             </picture>
           </figure>
         </article>
 
-        <article class="audience-panel audience-companies" id="companies">
+        <article class="audience-panel audience-companies" id="companies" data-header-tone="aqua">
           <figure class="audience-photo reveal">
             <picture>
               <source srcset="assets/ride.webp" type="image/webp" />
-              <img src="assets/ride.jpg" width="1440" height="960" alt="Семейный аттракцион на фоне колеса обозрения" loading="lazy" />
+              <img src="assets/ride.jpg" width="1200" height="800" alt="Аттракцион в Парке Сказка" loading="lazy" />
             </picture>
           </figure>
           <div class="audience-copy reveal" data-delay="1">
             <p class="panel-label">Для компаний</p>
             <h2>Поддержите визит детей в парк</h2>
-            <p>
-              Компания помогает детям из фонда приехать в Парк «Сказка» и провести день среди
-              аттракционов, животных и новых впечатлений.
-            </p>
-            <p class="panel-rule">
-              После визита партнёр получает подтверждение результата и материалы для коммуникации.
-            </p>
-            <a class="button button-dark" href="mailto:info@parkskazka.com?subject=Поддержать%20социальный%20визит%20детей">Обсудить поддержку</a>
+            <p>Компания может помочь детям из фонда приехать в Парк «Сказка» и провести день среди аттракционов, животных и новых впечатлений.</p>
+            <p>После визита компания получает подтверждение результата и материалы для коммуникации.</p>
+            <a class="button button-secondary" href="mailto:info@parkskazka.com?subject=Поддержать%20визит%20детей">Поддержать визит детей</a>
           </div>
         </article>
       </section>
 
-      <section class="section handoff" aria-labelledby="handoff-title">
+      <section class="handoff section" aria-labelledby="handoff-title" data-header-tone="lavender">
         <div class="section-heading section-heading-wide reveal">
           <p class="eyebrow"><span></span> Понятная роль каждого</p>
-          <h2 id="handoff-title">Как помощь доходит до ребёнка</h2>
+          <h2 id="handoff-title">Как помощь доходит до ребенка</h2>
+          <p>У каждого участника понятная роль.</p>
         </div>
-
-        <ol class="handoff-route" aria-label="Путь помощи">
-          <li class="reveal" tabindex="0">
-            <span>Компания</span>
-            <strong>поддерживает визит</strong>
-          </li>
-          <li class="reveal" data-delay="1" tabindex="0">
-            <span>Фонд</span>
-            <strong>собирает группу</strong>
-          </li>
-          <li class="reveal" data-delay="2" tabindex="0">
-            <span>Парк «Сказка»</span>
-            <strong>готовит программу дня</strong>
-          </li>
-          <li class="reveal" data-delay="3" tabindex="0">
-            <span>Ребёнок</span>
-            <strong>получает впечатления</strong>
-          </li>
+        <ol class="handoff-route" aria-label="Маршрут помощи">
+          <li class="reveal" tabindex="0"><span>Компания</span><strong>поддерживает визит</strong></li>
+          <li class="reveal" tabindex="0" data-delay="1"><span>Фонд</span><strong>собирает группу</strong></li>
+          <li class="reveal" tabindex="0" data-delay="2"><span>Парк «Сказка»</span><strong>готовит программу дня</strong></li>
+          <li class="reveal" tabindex="0" data-delay="3"><span>Ребенок</span><strong>получает новые впечатления</strong></li>
         </ol>
       </section>
 
-      <section class="rules section" id="rules" aria-labelledby="rules-title">
-        <div class="rules-intro reveal">
-          <p class="eyebrow"><span></span> Правила участия</p>
-          <h2 id="rules-title">Всё ясно с самого начала</h2>
-          <p>
-            Программа работает по предварительному согласованию. Полные условия собраны ниже, чтобы фонд,
-            компания и команда парка одинаково понимали процесс.
-          </p>
-          <a class="text-link" href="#rule-details" data-open-rules>Посмотреть все правила <span>↘</span></a>
-          <p class="legal-note">Редакция правил требует юридического согласования перед публикацией.</p>
-        </div>
-
-        <div class="rules-list" id="rule-details">
-          <details class="reveal">
-            <summary><span>01</span> Кто может участвовать</summary>
-            <div class="details-body">
-              <p>
-                Благотворительные фонды, НКО, социальные организации и компании, которые хотят
-                организовать или поддержать социальный визит детей в Парк «Сказка».
-              </p>
-              <p>Все визиты проходят по предварительному согласованию с координатором программы.</p>
-            </div>
-          </details>
-
-          <details class="reveal">
-            <summary><span>02</span> День социальной активности</summary>
-            <div class="details-body">
-              <p>Основной день — вторник с 10:00 до 14:00, в рамках утверждённой социальной квоты.</p>
-              <p>
-                Формат помогает заранее подготовить команду, согласовать маршрут и создать спокойные
-                условия. В отдельных случаях дата и время могут быть согласованы индивидуально.
-              </p>
-            </div>
-          </details>
-
-          <details class="reveal">
-            <summary><span>03</span> Что нужно фонду</summary>
-            <div class="details-body">
-              <ul>
-                <li>Направить запрос координатору и кратко рассказать об организации.</li>
-                <li>Указать количество детей и сопровождающих, возраст и важные особенности группы.</li>
-                <li>Согласовать дату, маршрут и соблюдать правила посещения парка.</li>
-                <li>После визита передать короткий отчёт и обратную связь.</li>
-              </ul>
-              <p>
-                Количество билетов зависит от квоты, сезона и загрузки. Билеты действуют только для
-                согласованного визита и не подлежат продаже или передаче.
-              </p>
-            </div>
-          </details>
-
-          <details class="reveal">
-            <summary><span>04</span> Как участвует компания</summary>
-            <div class="details-body">
-              <ol>
-                <li>Компания связывается с координатором, и мы обсуждаем формат участия.</li>
-                <li>Парк согласует фонд, дату и условия; фонд собирает группу и сопровождающих.</li>
-                <li>После визита компания получает подтверждение результата и материалы для коммуникации.</li>
-              </ol>
-            </div>
-          </details>
-
-          <details class="reveal">
-            <summary><span>05</span> Отчётность после визита</summary>
-            <div class="details-body">
-              <p>Короткий отчёт включает:</p>
-              <ul>
-                <li>дату визита, количество детей и сопровождающих;</li>
-                <li>краткий отзыв и то, что особенно понравилось группе;</li>
-                <li>фото или видео при наличии согласий;</li>
-                <li>ссылку на публикацию или упоминание парка, если материал выходил.</li>
-              </ul>
-            </div>
-          </details>
-
-          <details class="reveal">
-            <summary><span>06</span> Упоминание Парка «Сказка»</summary>
-            <div class="details-body">
-              <p>Упоминание парка как партнёра — обязательное условие участия. Возможные форматы:</p>
-              <ul>
-                <li>пост, сторис, новость, отзыв или отметка в публикации;</li>
-                <li>благодарность или логотип парка в разделе партнёров на сайте фонда;</li>
-                <li>постер парка как партнёра на крупных мероприятиях фонда.</li>
-              </ul>
-            </div>
-          </details>
-
-          <details class="reveal">
-            <summary><span>07</span> Фото, видео и приватность</summary>
-            <div class="details-body">
-              <p>Материалы с детьми используются только при наличии согласий.</p>
-              <p>
-                Без согласий допустимы фото без лиц, детали визита, общие виды парка, отзывы без
-                персональных данных и текстовый отчёт. Парк уважает приватность детей и семей.
-              </p>
-            </div>
-          </details>
-
-          <details class="reveal">
-            <summary><span>08</span> Следующий запрос и возможный перенос</summary>
-            <div class="details-body">
-              <p>Следующий визит согласуется после отчёта по предыдущему посещению.</p>
-              <p>Парк может предложить другую дату или отказать, если:</p>
-              <ul>
-                <li>высока загрузка или исчерпана социальная квота;</li>
-                <li>не предоставлена информация о составе группы;</li>
-                <li>не передан отчёт по прошлому визиту;</li>
-                <li>есть риск передачи билетов третьим лицам;</li>
-                <li>формат визита небезопасен или не соответствует условиям парка.</li>
-              </ul>
-            </div>
-          </details>
-        </div>
-      </section>
-
-      <section class="partners section" id="partners" aria-labelledby="partners-title">
+      <section class="partners section" id="partners" aria-labelledby="partners-title" data-header-tone="white">
         <div class="bubble-field partner-ambient reveal" aria-hidden="true">
           <span class="ambient-bubble partner-bubble-one"></span>
           <span class="ambient-bubble partner-bubble-two"></span>
@@ -499,59 +241,58 @@
           <span class="ambient-bubble partner-bubble-four"></span>
         </div>
         <div class="section-heading section-heading-wide reveal">
-          <p class="eyebrow"><span></span> Наши партнёры</p>
+          <p class="eyebrow"><span></span> Наши партнеры</p>
           <h2 id="partners-title">Фонды, с которыми уже сотрудничаем</h2>
-          <p>Подтверждённые знаки уже размещены. Остальные добавим после согласования с организациями.</p>
+          <p>Фонды и организации, которые вместе с нами помогают детям.</p>
         </div>
 
-        <div class="partner-grid" aria-label="Список фондов-партнёров">
+        <div class="partner-grid" aria-label="Список фондов-партнеров">
           <a class="partner-card partner-card-logo reveal" href="https://hrupkie.ru/" target="_blank" rel="noreferrer" aria-label="Официальный сайт фонда «Хрупкие люди»">
             <img src="assets/partners/hrupkie-lyudi.png" width="195" height="100" alt="" loading="lazy" />
             <span class="partner-card-label">Хрупкие люди</span>
-            <span class="partner-card-meta">Официальный сайт ↗</span>
           </a>
           <a class="partner-card partner-card-logo reveal" href="https://nikolasha.ru/" target="_blank" rel="noreferrer" aria-label="Официальный сайт благотворительного фонда «Николаша»" data-delay="1">
             <img src="assets/partners/nikolasha.svg" width="482" height="134" alt="" loading="lazy" />
-            <span class="partner-card-label">Благотворительный фонд «Николаша»</span>
-            <span class="partner-card-meta">Официальный сайт ↗</span>
+            <span class="partner-card-label">Николаша фонд</span>
           </a>
           <a class="partner-card partner-card-logo reveal" href="https://ruzs.ru/" target="_blank" rel="noreferrer" aria-label="Официальный сайт фонда «Защитник счастья»" data-delay="2">
             <img src="assets/partners/zashchitnik-schastya.png" width="570" height="139" alt="" loading="lazy" />
             <span class="partner-card-label">Фонд «Защитник счастья»</span>
-            <span class="partner-card-meta">Официальный сайт ↗</span>
           </a>
           <a class="partner-card partner-card-logo reveal" href="https://ladafond.ru/" target="_blank" rel="noreferrer" aria-label="Официальный сайт фонда ЛАДА">
             <img class="partner-logo-square" src="assets/partners/lada.png" width="512" height="512" alt="" loading="lazy" />
-            <span class="partner-card-label">Благотворительный фонд ЛАДА</span>
-            <span class="partner-card-meta">Официальный сайт ↗</span>
+            <span class="partner-card-label">Фонд ЛАДА</span>
           </a>
           <div class="partner-card partner-card-pending reveal" data-delay="1">
             <span class="partner-card-label">Доброе дело с нами</span>
-            <span class="partner-card-meta">Логотип на согласовании</span>
           </div>
           <div class="partner-card partner-card-pending reveal" data-delay="2">
             <span class="partner-card-label">АНО «Шаг навстречу»</span>
-            <span class="partner-card-meta">Логотип на согласовании</span>
           </div>
           <div class="partner-card partner-card-pending reveal">
             <span class="partner-card-label">АХО «Во благо детям»</span>
-            <span class="partner-card-meta">Логотип на согласовании</span>
           </div>
           <div class="partner-card partner-card-pending reveal" data-delay="1">
             <span class="partner-card-label">День ангела</span>
-            <span class="partner-card-meta">Логотип на согласовании</span>
           </div>
           <div class="partner-card partner-card-pending reveal" data-delay="2">
             <span class="partner-card-label">АХО «Единым целым»</span>
-            <span class="partner-card-meta">Логотип на согласовании</span>
           </div>
         </div>
+
+        <aside class="partners-rules reveal" id="rules" aria-labelledby="rules-title">
+          <div>
+            <p class="eyebrow"><span></span> Правила участия</p>
+            <h2 id="rules-title">Все ясно с самого начала</h2>
+          </div>
+          <a class="button button-primary" href="assets/docs/pravila-uchastiya.pdf?v=20260813-1" target="_blank" rel="noreferrer">Посмотреть правила</a>
+        </aside>
       </section>
 
-      <section class="join" aria-labelledby="join-title">
+      <section class="join" id="contact" aria-labelledby="join-title" data-header-tone="photo">
         <picture class="join-background">
-          <source srcset="assets/hero.webp" type="image/webp" />
-          <img src="assets/hero.jpg" width="1446" height="1080" alt="Панорама Парка Сказка в солнечный день" loading="lazy" />
+          <source srcset="assets/join-family.webp" type="image/webp" />
+          <img src="assets/join-family.jpg" width="2400" height="1600" alt="Семья проводит день среди аттракционов Парка Сказка" loading="lazy" />
         </picture>
         <div class="join-overlay" aria-hidden="true"></div>
         <div class="bubble-field join-bubbles reveal" aria-hidden="true">
@@ -559,15 +300,14 @@
         </div>
         <div class="join-content reveal">
           <p class="eyebrow eyebrow-light"><span></span> Присоединиться</p>
-          <h2 id="join-title">Пусть <span class="join-accent">хороший</span> <span class="join-accent">день</span> случится</h2>
-          <p>
-            Мы открыты для фондов и компаний, которые хотят подарить детям день радости в Парке «Сказка».
-          </p>
+          <h2 id="join-title">Хотите присоеди&shy;ниться?</h2>
+          <p class="join-subtitle">Пусть <span class="join-accent">хороший</span> <span class="join-accent">день</span> случится.</p>
+          <p>Мы открыты для фондов и компаний, которые хотят подарить детям день радости в Парке «Сказка».</p>
           <div class="join-actions">
             <a class="button button-light" href="tel:+79779704964">Получить билеты для подопечных</a>
-            <a class="button button-glass" href="mailto:info@parkskazka.com?subject=Поддержать%20социальный%20визит%20детей">Поддержать визит детей</a>
+            <a class="button button-glass" href="mailto:info@parkskazka.com?subject=Поддержать%20визит%20детей">Поддержать визит детей</a>
           </div>
-          <a class="join-phone" href="tel:+79779704964">+7 977 970-49-64</a>
+          <p class="join-thanks">Спасибо за Ваш труд и усилия на этом важном для страны поприще!</p>
         </div>
       </section>
     </main>
@@ -575,10 +315,10 @@
     <footer class="site-footer">
       <div class="footer-brand">
         <img src="assets/skazka-logo.png" width="150" height="56" alt="Парк Сказка" />
-        <p>Социальная программа организованных визитов</p>
+        <p>Социальная программа Парка «Сказка»</p>
       </div>
       <div class="footer-links">
-        <a href="https://parkskazka.com/socialnaja-activnost/" target="_blank" rel="noreferrer">Благотворительность парка</a>
+        <a href="assets/docs/pravila-uchastiya.pdf?v=20260813-1" target="_blank" rel="noreferrer">Правила участия</a>
         <a href="https://parkskazka.com/kontakty/" target="_blank" rel="noreferrer">Москва, ул. Крылатская, 18</a>
         <a href="mailto:info@parkskazka.com">info@parkskazka.com</a>
       </div>
@@ -588,6 +328,6 @@
       </div>
     </footer>
 
-    <script src="script.js?v=20260807-7"></script>
+    <script src="script.js?v=20260807-9"></script>
   </body>
 </html>
