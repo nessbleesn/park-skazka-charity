@@ -4174,8 +4174,8 @@ textarea {
 
 .summary-social-scale .impact-value {
   display: inline-flex;
-  align-items: baseline;
-  gap: 0.08em;
+  align-items: flex-start;
+  gap: 0.03em;
   white-space: nowrap;
   color: var(--iris-dark);
   font-family: var(--display);
@@ -4186,11 +4186,11 @@ textarea {
 }
 
 .summary-social-scale .impact-value-suffix {
-  position: relative;
-  top: -0.06em;
+  margin-top: 0.05em;
   flex: 0 0 auto;
   color: var(--teal-dark);
-  font-size: 0.52em;
+  font-size: 0.42em;
+  font-weight: 700;
   line-height: 1;
 }
 
