@@ -4035,8 +4035,12 @@ textarea {
 
 /* Final invitation: family photo and brand body type for the thank-you note. */
 .join-background img {
-  object-position: 52% center;
-  transform: translateX(14%) scale(1.05);
+  inset: 0 auto 0 0;
+  width: 114%;
+  object-position: center;
+  transform: none;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.08) 7%, rgba(0, 0, 0, 0.48) 22%, #000 44%);
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.08) 7%, rgba(0, 0, 0, 0.48) 22%, #000 44%);
 }
 
 .join-content > .join-thanks {
@@ -4052,8 +4056,16 @@ textarea {
 
 @media (max-width: 680px) {
   .join-background img {
+    inset: 0;
+    width: 100%;
     object-position: 36% center;
     transform: none;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .join-content h2 {
+    font-size: clamp(26px, 8.2vw, 36px);
   }
 
   .join-content > .join-thanks {
@@ -4245,6 +4257,12 @@ textarea {
 
 .join-content h2 {
   font-size: clamp(42px, 5.2vw, 72px);
+  hyphens: none;
+  overflow-wrap: normal;
+}
+
+.join-title-word {
+  white-space: nowrap;
 }
 
 .join-actions {
@@ -4361,7 +4379,7 @@ textarea {
   }
 
   .join-content h2 {
-    font-size: 44px;
+    font-size: clamp(26px, 8.2vw, 36px);
   }
 }
 
