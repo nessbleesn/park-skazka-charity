@@ -3678,6 +3678,22 @@ textarea {
   border-radius: 28px 28px 90px 28px;
 }
 
+@media (min-width: 901px) {
+  .experience {
+    width: min(1480px, calc(100% - 48px));
+    grid-template-columns: minmax(310px, 0.58fr) minmax(760px, 1.42fr);
+    gap: clamp(44px, 4.5vw, 76px);
+  }
+
+  .experience-copy {
+    max-width: 430px;
+  }
+
+  .experience .park-film-frame video {
+    aspect-ratio: 16 / 10;
+  }
+}
+
 .audience-foundations,
 .audience-foundations .audience-photo {
   min-height: 820px;
