@@ -2575,6 +2575,22 @@ textarea {
   object-fit: contain;
 }
 
+.partner-card-logo img.partner-logo-vo-blago {
+  width: 108px;
+  height: 116px;
+  max-width: 108px;
+  max-height: none;
+  object-fit: contain;
+}
+
+.partner-card-logo img.partner-logo-angel {
+  width: 132px;
+  height: 112px;
+  max-width: 132px;
+  max-height: none;
+  object-fit: contain;
+}
+
 .partner-card-label {
   font-family: var(--display);
   font-size: clamp(13px, 1.15vw, 16px);
@@ -4881,6 +4897,18 @@ textarea {
   .partner-card-logo img.partner-logo-shag {
     width: 104px;
     height: 89px;
+    max-width: 104px;
+  }
+
+  .partner-card-logo img.partner-logo-vo-blago {
+    width: 88px;
+    height: 96px;
+    max-width: 88px;
+  }
+
+  .partner-card-logo img.partner-logo-angel {
+    width: 104px;
+    height: 91px;
     max-width: 104px;
   }
 
