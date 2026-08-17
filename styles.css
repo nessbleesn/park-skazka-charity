@@ -2567,6 +2567,14 @@ textarea {
   object-fit: contain;
 }
 
+.partner-card-logo img.partner-logo-shag {
+  width: 132px;
+  height: 112px;
+  max-width: 132px;
+  max-height: none;
+  object-fit: contain;
+}
+
 .partner-card-label {
   font-family: var(--display);
   font-size: clamp(13px, 1.15vw, 16px);
@@ -4868,6 +4876,12 @@ textarea {
     width: 92px;
     height: 82px;
     max-width: 92px;
+  }
+
+  .partner-card-logo img.partner-logo-shag {
+    width: 104px;
+    height: 89px;
+    max-width: 104px;
   }
 
   .partner-card-label {
