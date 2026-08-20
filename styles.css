@@ -5212,3 +5212,501 @@ body.lead-dialog-open {
     margin: 0 7px 0 0;
   }
 }
+
+/* Responsive architecture: one grid from small phones to wide desktop. */
+:root {
+  --layout-max: 1260px;
+  --layout-gutter: clamp(16px, 3.35vw, 48px);
+  --content-edge: max(var(--layout-gutter), calc((100vw - var(--layout-max)) / 2));
+  --page: min(var(--layout-max), calc(100% - (var(--layout-gutter) * 2)));
+}
+
+.section {
+  padding-top: clamp(72px, 7.5vw, 112px);
+  padding-bottom: clamp(72px, 7.5vw, 112px);
+}
+
+.section-heading h2,
+.experience-copy h2,
+.rules-intro h2 {
+  font-size: clamp(34px, 4vw, 58px);
+}
+
+.header-shell {
+  gap: clamp(14px, 2vw, 24px);
+}
+
+.hero {
+  min-height: 0;
+  padding-top: calc(var(--header-height) + clamp(42px, 4vw, 62px));
+  padding-bottom: clamp(52px, 5vw, 72px);
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  gap: clamp(38px, 5vw, 76px);
+}
+
+.hero h1 {
+  font-size: clamp(48px, 5vw, 76px);
+}
+
+.hero-visual {
+  min-height: 0;
+  aspect-ratio: 1.12 / 1;
+}
+
+.program-summary {
+  padding: clamp(72px, 7.5vw, 108px) var(--content-edge);
+  gap: clamp(18px, 2vw, 28px);
+}
+
+.summary-card {
+  min-height: 500px;
+  padding: clamp(36px, 4vw, 56px);
+}
+
+.summary-social-note {
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.8fr) minmax(0, 1fr);
+  padding: clamp(32px, 3.6vw, 48px);
+}
+
+.experience {
+  width: min(1480px, calc(100% - (var(--layout-gutter) * 2)));
+  grid-template-columns: minmax(300px, 0.62fr) minmax(0, 1.38fr);
+  gap: clamp(42px, 5vw, 74px);
+}
+
+.experience-copy {
+  min-width: 0;
+}
+
+.experience .park-film-media,
+.experience .park-film-frame,
+.experience .park-film-frame video {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.experience .park-film-frame video {
+  aspect-ratio: 16 / 9;
+}
+
+.participation,
+.audience-panel,
+.audience-foundations,
+.audience-companies {
+  min-height: 0;
+}
+
+.audience-panel,
+.audience-foundations,
+.audience-companies {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.audience-copy {
+  padding-top: clamp(56px, 6vw, 88px);
+  padding-bottom: clamp(56px, 6vw, 88px);
+}
+
+.audience-foundations .audience-copy {
+  padding-right: clamp(36px, 6vw, 92px);
+  padding-left: var(--content-edge);
+}
+
+.audience-companies .audience-copy {
+  padding-right: var(--content-edge);
+  padding-left: clamp(36px, 6vw, 92px);
+}
+
+.audience-foundations .audience-photo,
+.audience-companies .audience-photo {
+  min-height: 500px;
+}
+
+.audience-copy h2 {
+  font-size: clamp(32px, 3.7vw, 52px);
+}
+
+.handoff {
+  padding-top: clamp(72px, 7.5vw, 104px);
+  padding-bottom: clamp(76px, 8vw, 112px);
+}
+
+.handoff-route {
+  margin-top: clamp(42px, 5vw, 62px);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.partners {
+  padding-top: clamp(72px, 7.5vw, 104px);
+  padding-bottom: clamp(78px, 8vw, 116px);
+}
+
+.partner-grid {
+  margin-top: clamp(34px, 4vw, 48px);
+}
+
+.partner-card {
+  min-height: 148px;
+}
+
+.join {
+  min-height: clamp(540px, 48vw, 640px);
+  padding-top: clamp(70px, 7vw, 96px);
+  padding-bottom: clamp(70px, 7vw, 96px);
+}
+
+.join-content h2 {
+  font-size: clamp(40px, 4.8vw, 68px);
+}
+
+@media (max-width: 1120px) {
+  :root {
+    --layout-gutter: clamp(20px, 3.1vw, 34px);
+  }
+
+  .header-shell {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+  }
+
+  .header-cta {
+    grid-column: 2;
+    width: auto;
+    justify-self: end;
+  }
+
+  .menu-toggle {
+    grid-column: 3;
+  }
+
+  .site-nav {
+    padding: 24px var(--layout-gutter) 32px;
+  }
+
+  .hero {
+    width: calc(100% - 24px);
+    grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+    gap: clamp(32px, 4vw, 48px);
+  }
+
+  .hero h1 {
+    font-size: clamp(48px, 5.2vw, 58px);
+  }
+
+  .hero-visual {
+    aspect-ratio: 1.08 / 1;
+  }
+
+  .summary-card {
+    min-height: 460px;
+    padding: clamp(32px, 4vw, 42px);
+  }
+
+  .summary-social-note {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.78fr) minmax(0, 1fr);
+  }
+
+  .summary-social-scale {
+    padding-right: clamp(18px, 2.5vw, 28px);
+    padding-left: clamp(18px, 2.5vw, 28px);
+  }
+
+  .audience-foundations .audience-photo,
+  .audience-companies .audience-photo {
+    min-height: 440px;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1199px) {
+  .experience {
+    width: var(--page);
+    grid-template-columns: minmax(0, 1fr);
+    gap: 38px;
+  }
+
+  .experience-copy {
+    max-width: 760px;
+  }
+
+  .experience .park-film-frame video {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 900px) {
+  :root {
+    --layout-gutter: clamp(20px, 4.1vw, 32px);
+  }
+
+  .hero {
+    width: 100%;
+    padding-right: var(--layout-gutter);
+    padding-left: var(--layout-gutter);
+    grid-template-columns: minmax(0, 1fr);
+    gap: 36px;
+    border-right: 0;
+    border-left: 0;
+  }
+
+  .hero h1 {
+    font-size: clamp(42px, 6.25vw, 50px);
+  }
+
+  .hero-visual {
+    width: 100%;
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+  }
+
+  .program-summary {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .summary-card {
+    min-height: 0;
+  }
+
+  .summary-social-note {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+  }
+
+  .summary-social-intro {
+    grid-column: 1 / -1;
+  }
+
+  .summary-social-scale {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .experience {
+    width: var(--page);
+    grid-template-columns: minmax(0, 1fr);
+    gap: 34px;
+  }
+
+  .experience-copy {
+    max-width: 720px;
+  }
+
+  .audience-panel,
+  .audience-foundations,
+  .audience-companies {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .audience-foundations .audience-copy,
+  .audience-companies .audience-copy {
+    order: 1;
+    padding: clamp(52px, 7vw, 70px) var(--layout-gutter);
+  }
+
+  .audience-foundations .audience-photo,
+  .audience-companies .audience-photo {
+    order: 2;
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+
+  .partner-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .partner-card {
+    min-height: 132px;
+  }
+
+  .partner-card:last-child {
+    grid-column: auto;
+  }
+
+  .site-footer {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 680px) {
+  :root {
+    --layout-gutter: 16px;
+  }
+
+  .header-shell {
+    width: 100%;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 8px;
+  }
+
+  .header-cta {
+    max-width: 146px;
+  }
+
+  .hero {
+    padding-top: calc(var(--header-height) + 28px);
+    padding-bottom: 22px;
+    gap: 26px;
+  }
+
+  .hero h1 {
+    font-size: clamp(33px, 9.4vw, 38px);
+  }
+
+  .hero-visual {
+    aspect-ratio: 1.18 / 1;
+  }
+
+  .section {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  .program-summary {
+    padding: 52px 16px;
+  }
+
+  .summary-card,
+  .summary-social-note {
+    padding: 30px 24px;
+  }
+
+  .summary-social-intro h2 {
+    overflow-wrap: anywhere;
+  }
+
+  .summary-social-note {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .summary-social-intro {
+    grid-column: auto;
+  }
+
+  .summary-social-scale {
+    padding: 18px 0;
+    border-top: 1px solid rgba(65, 80, 106, 0.15);
+    border-right: 0;
+    border-bottom: 1px solid rgba(65, 80, 106, 0.15);
+  }
+
+  .experience {
+    gap: 28px;
+  }
+
+  .experience .park-film-frame video {
+    aspect-ratio: 16 / 10;
+  }
+
+  .audience-foundations .audience-copy,
+  .audience-companies .audience-copy {
+    padding: 44px 16px 48px;
+  }
+
+  .audience-foundations .audience-photo,
+  .audience-companies .audience-photo {
+    aspect-ratio: 16 / 10;
+  }
+
+  .handoff {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  .handoff-route {
+    margin-top: 32px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .handoff-route::before {
+    top: 21px;
+    bottom: 21px;
+    left: 18px;
+    width: 2px;
+    height: auto;
+    background: repeating-linear-gradient(to bottom, var(--teal) 0 8px, transparent 8px 14px);
+  }
+
+  .handoff-route li {
+    min-height: 88px;
+    padding: 3px 0 22px 58px;
+    text-align: left;
+  }
+
+  .handoff-route li::before {
+    top: 4px;
+    left: 0;
+  }
+
+  .handoff-route li::after {
+    top: -3px;
+    left: -7px;
+  }
+
+  .handoff-route strong {
+    max-width: none;
+    margin: 6px 0 0;
+    font-size: 17px;
+    line-height: 1.25;
+  }
+
+  .partners {
+    padding-top: 56px;
+    padding-bottom: 64px;
+  }
+
+  .partner-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .partner-card {
+    min-height: 112px;
+  }
+
+  .partner-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .join {
+    min-height: 0;
+    padding: 58px 16px;
+  }
+
+  .join-content h2 {
+    font-size: clamp(28px, 8.4vw, 35px);
+  }
+
+  .site-footer {
+    padding-top: 34px;
+    padding-bottom: 34px;
+  }
+}
+
+@media (max-width: 360px) {
+  .park-logo img {
+    width: 92px;
+  }
+
+  .header-cta {
+    max-width: 124px;
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .header-phone-number {
+    font-size: 9px;
+  }
+
+  .hero h1 {
+    font-size: 33px;
+  }
+
+  .summary-time strong {
+    font-size: 27px;
+  }
+
+  .join-title-word {
+    white-space: normal;
+  }
+
+  .join-content h2 {
+    font-size: 26px;
+  }
+}
