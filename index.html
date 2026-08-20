@@ -17,7 +17,7 @@
     />
     <meta property="og:image" content="assets/og-charity.jpg" />
     <link rel="icon" href="assets/skazka-logo.png" />
-    <link rel="stylesheet" href="styles.css?v=20260820-2" />
+    <link rel="stylesheet" href="styles.css?v=20260820-3" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -346,7 +346,7 @@
             </label>
             <label class="lead-field">
               <span>Фонд или организация</span>
-              <input type="text" name="organization" autocomplete="organization" placeholder="Название" />
+              <input type="text" name="organization" autocomplete="organization" required placeholder="Название" />
             </label>
             <label class="lead-field">
               <span>Ваше имя</span>
@@ -357,17 +357,21 @@
               <input type="tel" name="phone" autocomplete="tel" inputmode="tel" required placeholder="+7 999 000-00-00" />
             </label>
             <label class="lead-field lead-field-wide">
-              <span>Электронная почта</span>
+              <span>Электронная почта (необязательно)</span>
               <input type="email" name="email" autocomplete="email" placeholder="mail@example.ru" />
             </label>
             <label class="lead-field lead-field-wide">
               <span>Комментарий</span>
-              <textarea name="comment" rows="3" maxlength="600" placeholder="Расскажите, какой формат участия вам интересен"></textarea>
+              <textarea name="comment" rows="3" maxlength="600" required placeholder="Расскажите, какой формат участия вам интересен"></textarea>
             </label>
           </div>
           <label class="lead-consent">
             <input type="checkbox" name="consent" required />
-            <span>Я согласен на обработку персональных данных для связи по заявке</span>
+            <span>
+              Я согласен на
+              <a href="https://parkskazka.com/upload/files/soglasie_na_obrabotku_personalnykh_dannykh.pdf" target="_blank" rel="noreferrer">обработку персональных данных</a>
+              для связи по заявке
+            </span>
           </label>
           <button class="button button-primary lead-form-submit" type="submit">Отправить заявку</button>
           <p class="lead-form-status" data-lead-status role="status" aria-live="polite" hidden></p>
