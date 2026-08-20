@@ -17,7 +17,7 @@
     />
     <meta property="og:image" content="assets/og-charity.jpg" />
     <link rel="icon" href="assets/skazka-logo.png" />
-    <link rel="stylesheet" href="styles.css?v=20260817-2" />
+    <link rel="stylesheet" href="styles.css?v=20260820-1" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -81,10 +81,10 @@
           <h1 id="hero-title">Подари ребенку <em>радость</em></h1>
           <div class="hero-text">
             <p>Парк «Сказка» ежегодно поддерживает благотворительные фонды и социальные организации, сотрудничает с Правительством Москвы и дарит детям возможность провести день в парке.</p>
-            <p>К программе могут присоединиться компании, которые вместе со «Сказкой» могут подарить детям позитивные впечатления и радость.</p>
+            <p>К программе могут присоединиться компании, которые вместе со «Сказкой» подарят детям позитивные впечатления и радость.</p>
           </div>
           <div class="hero-actions">
-            <a class="button button-secondary" href="tel:+79779704964" aria-label="Позвонить координатору: +7 977 970-49-64">Поддержать визит детей</a>
+            <button class="button button-secondary" type="button" data-support-open aria-haspopup="dialog" aria-controls="support-dialog">Поддержать визит детей</button>
           </div>
         </div>
 
@@ -300,7 +300,7 @@
           <p class="join-subtitle">Пусть <span class="join-accent">хороший</span> <span class="join-accent">день</span> случится</p>
           <p>Мы открыты для фондов и компаний, которые хотят подарить детям день радости в Парке «Сказка».</p>
           <div class="join-actions">
-            <a class="button button-glass" href="tel:+79779704964" aria-label="Позвонить координатору: +7 977 970-49-64">Поддержать визит детей</a>
+            <button class="button button-glass" type="button" data-support-open aria-haspopup="dialog" aria-controls="support-dialog">Поддержать визит детей</button>
           </div>
           <p class="join-thanks">Спасибо за Ваш труд и усилия на этом важном для страны поприще!</p>
         </div>
@@ -319,11 +319,62 @@
       </div>
       <div class="footer-meta">
         <p>© <span data-year>2026</span> ООО «Парк Сказка»</p>
+        <p class="footer-development">Разработка сайта — <a href="https://t.me/ssheron" target="_blank" rel="noreferrer">@ssheron</a></p>
         <a href="#top">Наверх ↑</a>
       </div>
       <p class="footer-legal"><span>ООО «Парк Сказка»</span><span>ИНН 7743185160</span><span>ОГРН 5167746421519</span></p>
     </footer>
 
-    <script src="script.js?v=20260807-9"></script>
+    <dialog class="lead-dialog" id="support-dialog" data-support-dialog aria-labelledby="support-dialog-title" aria-describedby="support-dialog-description">
+      <div class="lead-dialog-shell">
+        <button class="lead-dialog-close" type="button" data-support-close aria-label="Закрыть форму">×</button>
+        <p class="lead-dialog-eyebrow">Поддержать визит детей</p>
+        <h2 id="support-dialog-title">Давайте подарим детям день в «Сказке»</h2>
+        <p class="lead-dialog-description" id="support-dialog-description">Оставьте контакты — координатор программы свяжется с вами и расскажет о формате участия.</p>
+
+        <form class="lead-form" data-bitrix-lead-form>
+          <input type="hidden" name="source" value="Социальная программа Парка Сказка" />
+          <div class="lead-form-grid">
+            <label class="lead-field">
+              <span>Как вы хотите участвовать?</span>
+              <select name="participant_type" required>
+                <option value="">Выберите вариант</option>
+                <option value="company">От компании</option>
+                <option value="foundation">От фонда или НКО</option>
+                <option value="personal">Лично</option>
+              </select>
+            </label>
+            <label class="lead-field">
+              <span>Компания или организация</span>
+              <input type="text" name="organization" autocomplete="organization" placeholder="Название" />
+            </label>
+            <label class="lead-field">
+              <span>Ваше имя</span>
+              <input type="text" name="contact_name" autocomplete="name" required placeholder="Как к вам обращаться" />
+            </label>
+            <label class="lead-field">
+              <span>Телефон</span>
+              <input type="tel" name="phone" autocomplete="tel" inputmode="tel" required placeholder="+7 999 000-00-00" />
+            </label>
+            <label class="lead-field lead-field-wide">
+              <span>Электронная почта</span>
+              <input type="email" name="email" autocomplete="email" placeholder="mail@example.ru" />
+            </label>
+            <label class="lead-field lead-field-wide">
+              <span>Комментарий</span>
+              <textarea name="comment" rows="3" maxlength="600" placeholder="Расскажите, какой формат участия вам интересен"></textarea>
+            </label>
+          </div>
+          <label class="lead-consent">
+            <input type="checkbox" name="consent" required />
+            <span>Я согласен на обработку персональных данных для связи по заявке</span>
+          </label>
+          <button class="button button-primary lead-form-submit" type="submit">Отправить заявку</button>
+          <p class="lead-form-status" data-lead-status role="status" aria-live="polite" hidden></p>
+        </form>
+      </div>
+    </dialog>
+
+    <script src="script.js?v=20260820-1"></script>
   </body>
 </html>

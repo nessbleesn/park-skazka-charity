@@ -189,6 +189,82 @@ handoffItems.forEach((item) => {
   });
 });
 
+const supportDialog = document.querySelector("[data-support-dialog]");
+const supportDialogOpeners = [...document.querySelectorAll("[data-support-open]")];
+const supportDialogCloser = supportDialog?.querySelector("[data-support-close]");
+const supportForm = supportDialog?.querySelector("[data-bitrix-lead-form]");
+const leadStatus = supportDialog?.querySelector("[data-lead-status]");
+let supportDialogTrigger = null;
+
+const setLeadStatus = (message = "") => {
+  if (!leadStatus) return;
+  leadStatus.textContent = message;
+  leadStatus.hidden = !message;
+};
+
+const closeSupportDialog = () => {
+  if (!supportDialog) return;
+  if (typeof supportDialog.close === "function") {
+    supportDialog.close();
+  } else {
+    supportDialog.removeAttribute("open");
+  }
+};
+
+supportDialogOpeners.forEach((button) => {
+  button.addEventListener("click", () => {
+    if (!supportDialog) return;
+    supportDialogTrigger = button;
+    setMenuState(false);
+    setLeadStatus();
+    document.body.classList.add("lead-dialog-open");
+    if (typeof supportDialog.showModal === "function") {
+      supportDialog.showModal();
+    } else {
+      supportDialog.setAttribute("open", "");
+      supportDialog.querySelector("input, select, textarea, button")?.focus();
+    }
+  });
+});
+
+supportDialogCloser?.addEventListener("click", closeSupportDialog);
+
+supportDialog?.addEventListener("click", (event) => {
+  if (event.target !== supportDialog) return;
+  const bounds = supportDialog.getBoundingClientRect();
+  const inside = event.clientX >= bounds.left && event.clientX <= bounds.right && event.clientY >= bounds.top && event.clientY <= bounds.bottom;
+  if (!inside) closeSupportDialog();
+});
+
+supportDialog?.addEventListener("close", () => {
+  document.body.classList.remove("lead-dialog-open");
+  supportDialogTrigger?.focus({ preventScroll: true });
+});
+
+supportForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+  if (!supportForm.reportValidity()) return;
+
+  const formData = new FormData(supportForm);
+  const bitrixEvent = new CustomEvent("bitrix:lead-submit", {
+    bubbles: true,
+    cancelable: true,
+    detail: {
+      form: supportForm,
+      formData,
+      values: Object.fromEntries(formData.entries()),
+      close: closeSupportDialog,
+      setStatus: setLeadStatus,
+    },
+  });
+
+  // Bitrix integration: prevent this event and use detail.formData in the external request handler.
+  supportForm.dispatchEvent(bitrixEvent);
+  if (!bitrixEvent.defaultPrevented) {
+    setLeadStatus("Форма готова. Отправка заявки будет подключена к Битрикс отдельно.");
+  }
+});
+
 const year = new Date().getFullYear();
 document.querySelectorAll("[data-year]").forEach((element) => {
   element.textContent = String(year);
