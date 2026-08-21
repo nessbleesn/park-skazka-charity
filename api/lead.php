@@ -121,7 +121,6 @@ if (!isset($participantLabels[$participantType])
     || $contactName === ''
     || strlen($phoneDigits) < 7
     || $comment === ''
-    || !$consent
     || ($email !== '' && filter_var($email, FILTER_VALIDATE_EMAIL) === false)) {
     respond(422, ['ok' => false, 'message' => 'Required fields are invalid']);
 }
@@ -136,11 +135,15 @@ if (!in_array($pageHost, ['parkskazka.ru', 'www.parkskazka.ru'], true)) {
     $pageUrl = 'https://parkskazka.ru/charity/';
 }
 
+$consentNote = $consent
+    ? 'получено ' . gmdate('c')
+    : 'не отмечено';
+
 $fields = [
     'NAME' => $contactName,
     'SOURCE_ID' => 'WEB',
     'TITLE' => 'Заявка на Давайте подарим детям день в Сказке',
-    'COMMENTS' => "Как вы хотите участвовать: {$participantLabels[$participantType]}\nКомментарий: {$comment}\nСогласие на обработку персональных данных: получено " . gmdate('c'),
+    'COMMENTS' => "Как вы хотите участвовать: {$participantLabels[$participantType]}\nКомментарий: {$comment}\nСогласие на обработку персональных данных: {$consentNote}",
     'PHONE' => [['VALUE' => $phone, 'VALUE_TYPE' => 'WORK']],
     'COMPANY_TITLE' => $organization,
     'UF_CRM_1786958358509' => 'Социальная программа Парка Сказка',
