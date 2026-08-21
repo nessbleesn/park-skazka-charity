@@ -194,12 +194,35 @@ const supportDialogOpeners = [...document.querySelectorAll("[data-support-open]"
 const supportDialogCloser = supportDialog?.querySelector("[data-support-close]");
 const supportForm = supportDialog?.querySelector("[data-bitrix-lead-form]");
 const leadStatus = supportDialog?.querySelector("[data-lead-status]");
+const leadSubmitButton = supportDialog?.querySelector("[data-lead-submit]");
 let supportDialogTrigger = null;
 
-const setLeadStatus = (message = "") => {
+const setLeadStatus = (message = "", state = "") => {
   if (!leadStatus) return;
   leadStatus.textContent = message;
   leadStatus.hidden = !message;
+  if (state) leadStatus.dataset.state = state;
+  else delete leadStatus.dataset.state;
+};
+
+const readCookie = (name) => {
+  const prefix = `${encodeURIComponent(name)}=`;
+  const item = document.cookie.split("; ").find((value) => value.startsWith(prefix));
+  return item ? decodeURIComponent(item.slice(prefix.length)) : "";
+};
+
+const getTrackingValues = () => {
+  const params = new URLSearchParams(window.location.search);
+  return {
+    utm_source: params.get("utm_source") || "",
+    utm_medium: params.get("utm_medium") || "",
+    utm_campaign: params.get("utm_campaign") || "",
+    utm_content: params.get("utm_content") || "",
+    utm_term: params.get("utm_term") || "",
+    yclid: params.get("yclid") || "",
+    gclid: params.get("gclid") || "",
+    client_id: readCookie("_ym_uid") || readCookie("_ga") || "",
+  };
 };
 
 const closeSupportDialog = () => {
@@ -217,6 +240,7 @@ supportDialogOpeners.forEach((button) => {
     supportDialogTrigger = button;
     setMenuState(false);
     setLeadStatus();
+    if (supportForm) supportForm.dataset.startedAt = String(Date.now());
     document.body.classList.add("lead-dialog-open");
     if (typeof supportDialog.showModal === "function") {
       supportDialog.showModal();
@@ -241,27 +265,71 @@ supportDialog?.addEventListener("close", () => {
   supportDialogTrigger?.focus({ preventScroll: true });
 });
 
-supportForm?.addEventListener("submit", (event) => {
+supportForm?.addEventListener("submit", async (event) => {
   event.preventDefault();
   if (!supportForm.reportValidity()) return;
 
   const formData = new FormData(supportForm);
+  const values = Object.fromEntries(formData.entries());
   const bitrixEvent = new CustomEvent("bitrix:lead-submit", {
     bubbles: true,
     cancelable: true,
     detail: {
       form: supportForm,
       formData,
-      values: Object.fromEntries(formData.entries()),
+      values,
       close: closeSupportDialog,
       setStatus: setLeadStatus,
     },
   });
 
-  // Bitrix integration: prevent this event and use detail.formData in the external request handler.
   supportForm.dispatchEvent(bitrixEvent);
-  if (!bitrixEvent.defaultPrevented) {
-    setLeadStatus("Форма готова. Отправка заявки будет подключена к Битрикс отдельно.");
+  if (bitrixEvent.defaultPrevented) return;
+
+  const initialButtonText = leadSubmitButton?.textContent || "Отправить заявку";
+  if (leadSubmitButton) {
+    leadSubmitButton.disabled = true;
+    leadSubmitButton.textContent = "Отправляем…";
+  }
+  setLeadStatus("Отправляем заявку…");
+
+  const controller = new AbortController();
+  const timeoutId = window.setTimeout(() => controller.abort(), 12000);
+
+  try {
+    const response = await fetch("api/lead.php", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      credentials: "same-origin",
+      signal: controller.signal,
+      body: JSON.stringify({
+        ...values,
+        consent: formData.has("consent"),
+        elapsed_ms: Math.max(0, Date.now() - Number(supportForm.dataset.startedAt || Date.now())),
+        page_url: window.location.href,
+        ...getTrackingValues(),
+      }),
+    });
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok || !result.ok) throw new Error("Lead request failed");
+
+    supportForm.reset();
+    supportForm.dataset.startedAt = String(Date.now());
+    setLeadStatus("Спасибо! Заявка отправлена. Координатор программы свяжется с вами.", "success");
+  } catch (error) {
+    const message = error?.name === "AbortError"
+      ? "Сервис отвечает дольше обычного. Попробуйте ещё раз или позвоните нам: +7 977 970-49-64."
+      : "Не удалось отправить заявку. Попробуйте ещё раз или позвоните нам: +7 977 970-49-64.";
+    setLeadStatus(message, "error");
+  } finally {
+    window.clearTimeout(timeoutId);
+    if (leadSubmitButton) {
+      leadSubmitButton.disabled = false;
+      leadSubmitButton.textContent = initialButtonText;
+    }
   }
 });
 

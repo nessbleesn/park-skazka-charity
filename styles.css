@@ -2841,7 +2841,19 @@ body.lead-dialog-open {
 }
 
 .lead-form {
+  position: relative;
   margin-top: 28px;
+}
+
+.lead-trap {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .lead-form-grid {
@@ -2927,6 +2939,12 @@ body.lead-dialog-open {
   margin-top: 22px;
 }
 
+.lead-form-submit:disabled {
+  cursor: wait;
+  opacity: 0.68;
+  transform: none;
+}
+
 .lead-form-status {
   margin: 14px 0 0;
   padding: 11px 14px;
@@ -2935,6 +2953,18 @@ body.lead-dialog-open {
   background: rgba(226, 219, 255, 0.62);
   font-size: 13px;
   line-height: 1.45;
+}
+
+.lead-form-status[data-state="success"] {
+  color: #235c51;
+  border: 1px solid rgba(35, 92, 81, 0.18);
+  background: rgba(214, 244, 237, 0.78);
+}
+
+.lead-form-status[data-state="error"] {
+  color: #7b3140;
+  border: 1px solid rgba(123, 49, 64, 0.18);
+  background: rgba(255, 227, 232, 0.78);
 }
 
 @media (max-width: 680px) {

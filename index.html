@@ -32,7 +32,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=20260821-1" />
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png?v=20260821-1" />
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png?v=20260821-1" />
-    <link rel="stylesheet" href="styles.css?v=20260820-3" />
+    <link rel="stylesheet" href="styles.css?v=20260821-3" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -349,6 +349,10 @@
 
         <form class="lead-form" data-bitrix-lead-form>
           <input type="hidden" name="source" value="Социальная программа Парка Сказка" />
+          <label class="lead-trap" aria-hidden="true">
+            <span>Не заполняйте это поле</span>
+            <input type="text" name="website" tabindex="-1" autocomplete="off" />
+          </label>
           <div class="lead-form-grid">
             <label class="lead-field">
               <span>Как вы хотите участвовать?</span>
@@ -361,19 +365,19 @@
             </label>
             <label class="lead-field">
               <span>Фонд или организация</span>
-              <input type="text" name="organization" autocomplete="organization" required placeholder="Название" />
+              <input type="text" name="organization" autocomplete="organization" maxlength="160" required placeholder="Название" />
             </label>
             <label class="lead-field">
               <span>Ваше имя</span>
-              <input type="text" name="contact_name" autocomplete="name" required placeholder="Как к вам обращаться" />
+              <input type="text" name="contact_name" autocomplete="name" maxlength="120" required placeholder="Как к вам обращаться" />
             </label>
             <label class="lead-field">
               <span>Телефон</span>
-              <input type="tel" name="phone" autocomplete="tel" inputmode="tel" required placeholder="+7 999 000-00-00" />
+              <input type="tel" name="phone" autocomplete="tel" inputmode="tel" maxlength="40" required placeholder="+7 999 000-00-00" />
             </label>
             <label class="lead-field lead-field-wide">
               <span>Электронная почта (необязательно)</span>
-              <input type="email" name="email" autocomplete="email" placeholder="mail@example.ru" />
+              <input type="email" name="email" autocomplete="email" maxlength="160" placeholder="mail@example.ru" />
             </label>
             <label class="lead-field lead-field-wide">
               <span>Комментарий</span>
@@ -388,12 +392,12 @@
               для связи по заявке
             </span>
           </label>
-          <button class="button button-primary lead-form-submit" type="submit">Отправить заявку</button>
+          <button class="button button-primary lead-form-submit" type="submit" data-lead-submit>Отправить заявку</button>
           <p class="lead-form-status" data-lead-status role="status" aria-live="polite" hidden></p>
         </form>
       </div>
     </dialog>
 
-    <script src="script.js?v=20260820-1"></script>
+    <script src="script.js?v=20260821-2"></script>
   </body>
 </html>
