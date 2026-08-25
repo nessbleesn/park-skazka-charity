@@ -2216,7 +2216,7 @@ select {
 .ambient-bubble {
   --bubble-drift-x: 18px;
   --bubble-drift-y: -22px;
-  --bubble-duration: 20s;
+  --bubble-duration: 8.8s;
   --bubble-delay: 0s;
   --bubble-opacity: 0.78;
   --bubble-start-opacity: 0.3;
@@ -2272,7 +2272,7 @@ select {
   aspect-ratio: 1;
   --bubble-drift-x: 70px;
   --bubble-drift-y: -50px;
-  --bubble-duration: 15s;
+  --bubble-duration: 6.6s;
 }
 
 .partner-bubble-two {
@@ -2282,8 +2282,8 @@ select {
   aspect-ratio: 1;
   --bubble-drift-x: -56px;
   --bubble-drift-y: -66px;
-  --bubble-duration: 16s;
-  --bubble-delay: -4s;
+  --bubble-duration: 7.5s;
+  --bubble-delay: -1.8s;
 }
 
 .partner-bubble-three {
@@ -2293,8 +2293,8 @@ select {
   aspect-ratio: 1;
   --bubble-drift-x: 46px;
   --bubble-drift-y: -58px;
-  --bubble-duration: 13s;
-  --bubble-delay: -7s;
+  --bubble-duration: 6.2s;
+  --bubble-delay: -3.4s;
 }
 
 .partner-bubble-four {
@@ -2304,8 +2304,8 @@ select {
   aspect-ratio: 1;
   --bubble-drift-x: -64px;
   --bubble-drift-y: -72px;
-  --bubble-duration: 17s;
-  --bubble-delay: -9s;
+  --bubble-duration: 8s;
+  --bubble-delay: -4.2s;
 }
 
 .preparation-bubbles,
@@ -2344,8 +2344,8 @@ select {
   --bubble-start-opacity: 0.4;
   --bubble-drift-x: 34px;
   --bubble-drift-y: 24px;
-  --bubble-duration: 16s;
-  --bubble-delay: -3s;
+  --bubble-duration: 7.5s;
+  --bubble-delay: -1.5s;
 }
 
 .hero-bubble-two {
@@ -2359,8 +2359,8 @@ select {
   --bubble-start-opacity: 0.42;
   --bubble-drift-x: -28px;
   --bubble-drift-y: 32px;
-  --bubble-duration: 14s;
-  --bubble-delay: -6s;
+  --bubble-duration: 6.6s;
+  --bubble-delay: -2.9s;
 }
 
 .hero-bubble-three {
@@ -2372,8 +2372,8 @@ select {
   --bubble-start-opacity: 0.36;
   --bubble-drift-x: 24px;
   --bubble-drift-y: -28px;
-  --bubble-duration: 13s;
-  --bubble-delay: -8s;
+  --bubble-duration: 6.2s;
+  --bubble-delay: -3.8s;
 }
 
 .preparation-bubble-one {
@@ -2385,8 +2385,8 @@ select {
   --bubble-start-opacity: 0.24;
   --bubble-drift-x: -46px;
   --bubble-drift-y: -48px;
-  --bubble-duration: 14s;
-  --bubble-delay: -5s;
+  --bubble-duration: 6.6s;
+  --bubble-delay: -2.2s;
 }
 
 .preparation-bubble-two {
@@ -2398,8 +2398,8 @@ select {
   --bubble-start-opacity: 0.18;
   --bubble-drift-x: 36px;
   --bubble-drift-y: -44px;
-  --bubble-duration: 12s;
-  --bubble-delay: -8s;
+  --bubble-duration: 5.8s;
+  --bubble-delay: -3.7s;
 }
 
 .join-bubbles {
@@ -2415,8 +2415,8 @@ select {
   --bubble-start-opacity: 0.34;
   --bubble-drift-x: -72px;
   --bubble-drift-y: -58px;
-  --bubble-duration: 17s;
-  --bubble-delay: -10s;
+  --bubble-duration: 8s;
+  --bubble-delay: -4.6s;
 }
 
 .motion-ready .bubble-field.reveal {
