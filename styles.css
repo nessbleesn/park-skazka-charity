@@ -431,6 +431,15 @@ select {
   line-height: 1.08;
 }
 
+.header-cta-static {
+  pointer-events: none;
+  user-select: none;
+}
+
+.header-cta-call {
+  display: none;
+}
+
 .header-phone-label {
   font-family: var(--utility);
   font-size: 8px;
@@ -5753,5 +5762,15 @@ body.lead-dialog-open {
 
   .join-content h2 {
     font-size: 26px;
+  }
+}
+
+@media (max-width: 680px) {
+  .header-cta-static {
+    display: none;
+  }
+
+  .header-cta-call {
+    display: inline-flex;
   }
 }
